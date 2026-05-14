@@ -2,12 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="icon" href="./favicon.png" type="image/png">
+    <base href="./">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- TODO: Set the document title to the name of your application -->
     <title>Refined Benefits Microfinance Bank | Empowering Financial Growth</title>
     <meta name="description" content="Refined Benefits MFB — Licensed microfinance bank in Nigeria offering savings, loans, financial advisory, and digital banking solutions.">
     <meta name="author" content="Refined Benefits MFB" />
+    <script>
+      const currentUrl = window.location.href;
+      if (!document.querySelector('base')) {
+        const base = document.createElement('base');
+        base.href = currentUrl.replace(/index\.html$/, '');
+        document.head.prepend(base);
+      }
+      if (window.location.protocol === 'file:' || window.location.pathname.endsWith('index.html')) {
+        const newPath = '/';
+        if (window.location.pathname !== newPath) {
+          window.history.replaceState({}, '', newPath + window.location.search + window.location.hash);
+        }
+      }
+    </script>
 
     
     
@@ -21,9 +36,8 @@
   <meta name="twitter:title" content="Refined Benefits Microfinance Bank | Empowering Financial Growth">
   <meta property="og:description" content="Refined Benefits MFB — Licensed microfinance bank in Nigeria offering savings, loans, financial advisory, and digital banking solutions.">
   <meta name="twitter:description" content="Refined Benefits MFB — Licensed microfinance bank in Nigeria offering savings, loans, financial advisory, and digital banking solutions.">
-  <script type="module" crossorigin src="/assets/index-DzzFC3Xg.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CmvNRqP2.css">
-</head>
+  <script type="module" crossorigin src="./assets/index-DzzFC3Xg.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CmvNRqP2.css">
 
   <body>
     <div id="root"></div>
